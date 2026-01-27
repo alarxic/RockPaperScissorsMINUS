@@ -13,13 +13,13 @@ char* choices[] = {
 int wins = 0;
 int losses = 0;
 
-int strExistsInArray(const char* target, const char* array[])
+int strExistsInArray(const char* target)
 {
-    int size = sizeof(choices) / sizeof(choices[0]);
+    int size = 3;
 
     for (int i = 0; i < size; i++)
     {
-        if (strcmp(array[i], target) == 0)
+        if (strcmp(choices[i], target) == 0)
         {
             return i;
         }
@@ -45,7 +45,7 @@ void gameLoop()
         return;
     }
 
-    int index = strExistsInArray(strlwr(choice), choices);
+    int index = strExistsInArray(strlwr(choice));
     
     if (index != -1)
     {
